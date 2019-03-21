@@ -16,6 +16,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        this.setLocation(800-200, 450 - 200);
         this.setSize(Home.xSize, Home.ySize);
         String firstName = "";
     }
@@ -36,10 +37,12 @@ public class Login extends javax.swing.JFrame {
         loginBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Freshman Transition");
         getContentPane().setLayout(null);
 
         nameTxtFld.setForeground(new java.awt.Color(153, 153, 153));
-        nameTxtFld.setText("Enter your first and last name");
+        nameTxtFld.setText("Enter First and Last Name Here");
+        nameTxtFld.setToolTipText("");
         getContentPane().add(nameTxtFld);
         nameTxtFld.setBounds(49, 110, 300, 20);
 
@@ -79,29 +82,27 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(startBtn);
         startBtn.setBounds(160, 180, 73, 23);
-
-        loginBackground.setIcon(new javax.swing.ImageIcon("G:\\Documents\\9 - Clubs\\TSA\\FreshmanTransition\\resources\\front school 400x300 (filter).jpg")); // NOI18N
         getContentPane().add(loginBackground);
         loginBackground.setBounds(0, 0, 400, 420);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
-    
     private void startBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtnActionPerformed
         // TODO add your handling code here:
         Home home = new Home();
         home.setVisible(true);
         this.setVisible(false);
-        
+
         String fullName = nameTxtFld.getText();
         int space = fullName.indexOf(" ");
         String firstName = fullName.substring(0, space);
-        
+
     }//GEN-LAST:event_startBtnActionPerformed
+
     
+    
+        
     /**
      * @param args the command line arguments
      */
@@ -142,6 +143,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel loginBlackPanel;
     private javax.swing.JLabel loginWelcomeTxt;
     private javax.swing.JTextField nameTxtFld;
-    public javax.swing.JButton startBtn;
+    private javax.swing.JButton startBtn;
     // End of variables declaration//GEN-END:variables
 }

@@ -19,6 +19,8 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setLocation(800-200, 450 - 200);
         this.setSize(xSize, ySize);
         
     }
@@ -32,54 +34,23 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        careerBtn = new javax.swing.JButton();
-        scheduleBtn = new javax.swing.JButton();
-        intranetBtn = new javax.swing.JButton();
-        laptopBtn = new javax.swing.JButton();
         loginBlackPanel = new javax.swing.JPanel();
         homeWelcomeTxt = new javax.swing.JLabel();
         homeBackground = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Freshman Transition");
         getContentPane().setLayout(null);
-
-        careerBtn.setBackground(new java.awt.Color(255, 255, 255));
-        careerBtn.setIcon(new javax.swing.ImageIcon("G:\\Documents\\9 - Clubs\\TSA\\FreshmanTransition\\resources\\career button 50x50.jpg")); // NOI18N
-        careerBtn.setText("Career Finder");
-        careerBtn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        careerBtn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        careerBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                careerBtnActionPerformed(evt);
-            }
-        });
-        getContentPane().add(careerBtn);
-        careerBtn.setBounds(20, 80, 150, 70);
-
-        scheduleBtn.setText("Schedule Maker");
-        scheduleBtn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        scheduleBtn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(scheduleBtn);
-        scheduleBtn.setBounds(230, 80, 150, 70);
-
-        intranetBtn.setText("Student Intranet");
-        intranetBtn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        intranetBtn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(intranetBtn);
-        intranetBtn.setBounds(20, 190, 150, 70);
-
-        laptopBtn.setText("Laptop Troubleshooter");
-        laptopBtn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        laptopBtn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(laptopBtn);
-        laptopBtn.setBounds(230, 190, 150, 70);
 
         loginBlackPanel.setBackground(new java.awt.Color(0, 0, 0));
         loginBlackPanel.setForeground(new java.awt.Color(255, 255, 255));
 
         homeWelcomeTxt.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         homeWelcomeTxt.setForeground(new java.awt.Color(255, 255, 255));
-        homeWelcomeTxt.setText("Hello!");
+        homeWelcomeTxt.setText("Welcome Jillian!");
 
         javax.swing.GroupLayout loginBlackPanelLayout = new javax.swing.GroupLayout(loginBlackPanel);
         loginBlackPanel.setLayout(loginBlackPanelLayout);
@@ -105,15 +76,44 @@ public class Home extends javax.swing.JFrame {
         getContentPane().add(homeBackground);
         homeBackground.setBounds(0, 0, 0, 0);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\jilli\\Documents\\GitHub\\FreshmanTransition\\resources\\career button 50x50.jpg")); // NOI18N
+        jLabel1.setText("Career Finder");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jLabel1MouseReleased(evt);
+            }
+        });
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(20, 80, 130, 50);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\jilli\\Documents\\GitHub\\FreshmanTransition\\resources\\web button 50x50.png")); // NOI18N
+        jLabel2.setText("Student Intranet");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jLabel2MouseReleased(evt);
+            }
+        });
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(20, 140, 140, 50);
+
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(20, 210, 34, 14);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void careerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_careerBtnActionPerformed
+    private void jLabel1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseReleased
         // TODO add your handling code here:
-        Survey career = new Survey();
-        career.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_careerBtnActionPerformed
+        Survey survey = new Survey();
+        survey.setVisible(true);
+    }//GEN-LAST:event_jLabel1MouseReleased
+
+    private void jLabel2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseReleased
+        // TODO add your handling code here:
+        Hyperlinks hyp = new Hyperlinks();
+        hyp.setVisible(true);
+    }//GEN-LAST:event_jLabel2MouseReleased
 
     /**
      * @param args the command line arguments
@@ -151,12 +151,11 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton careerBtn;
     private javax.swing.JLabel homeBackground;
     private javax.swing.JLabel homeWelcomeTxt;
-    private javax.swing.JButton intranetBtn;
-    private javax.swing.JButton laptopBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel loginBlackPanel;
-    private javax.swing.JButton scheduleBtn;
     // End of variables declaration//GEN-END:variables
 }

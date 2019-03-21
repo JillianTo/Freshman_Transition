@@ -14,9 +14,22 @@ public class Survey extends javax.swing.JFrame {
     /**
      * Creates new form CareerSurvey
      */
+    private int counter;
+    private int artCounter;
+    private int stemCounter;
+    private int lawCounter;
+    private int medicalCounter;
+    
     public Survey() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setLocation(800-200, 450 - 200);
         this.setSize(Home.xSize, Home.ySize);
+        counter = 0;
+        artCounter = 0;
+        stemCounter = 0;
+        lawCounter = 0;
+        medicalCounter = 0;
     }
 
     /**
@@ -39,31 +52,36 @@ public class Survey extends javax.swing.JFrame {
         nextBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Freshman Transition");
         getContentPane().setLayout(null);
 
         buttonGroup1.add(choiceABtn);
+        choiceABtn.setText("Watch movie or play video games");
         choiceABtn.setName(""); // NOI18N
         getContentPane().add(choiceABtn);
-        choiceABtn.setBounds(30, 100, 340, 21);
+        choiceABtn.setBounds(30, 100, 340, 23);
 
         buttonGroup1.add(choiceBBtn);
+        choiceBBtn.setText("Play video games");
         getContentPane().add(choiceBBtn);
-        choiceBBtn.setBounds(30, 130, 340, 21);
+        choiceBBtn.setBounds(30, 130, 340, 23);
 
         buttonGroup1.add(choiceCBtn);
+        choiceCBtn.setText("Talk with friends");
         getContentPane().add(choiceCBtn);
-        choiceCBtn.setBounds(30, 160, 340, 21);
+        choiceCBtn.setBounds(30, 160, 340, 23);
 
         buttonGroup1.add(choiceDBtn);
+        choiceDBtn.setText("Exercise");
         getContentPane().add(choiceDBtn);
-        choiceDBtn.setBounds(30, 190, 340, 21);
+        choiceDBtn.setBounds(30, 190, 340, 23);
 
         surveyBlackPanel.setBackground(new java.awt.Color(0, 0, 0));
         surveyBlackPanel.setForeground(new java.awt.Color(255, 255, 255));
 
-        questionTxt.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        questionTxt.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         questionTxt.setForeground(new java.awt.Color(255, 255, 255));
-        questionTxt.setText("Text");
+        questionTxt.setText("What do you like to do in your free time?");
 
         javax.swing.GroupLayout surveyBlackPanelLayout = new javax.swing.GroupLayout(surveyBlackPanel);
         surveyBlackPanel.setLayout(surveyBlackPanelLayout);
@@ -71,7 +89,7 @@ public class Survey extends javax.swing.JFrame {
             surveyBlackPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(surveyBlackPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(questionTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                .addComponent(questionTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         surveyBlackPanelLayout.setVerticalGroup(
@@ -101,6 +119,56 @@ public class Survey extends javax.swing.JFrame {
 
     private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
         // TODO add your handling code here:
+        counter++;
+        if(counter == 5){
+            Survey survWin = new Survey();
+            this.dispose();
+            SurveyResults res = new SurveyResults();
+            res.setVisible(true);
+        }else{
+            switch(counter){
+                case 1:
+                    questionTxt.setText("What is your favorite subject?");
+                    choiceABtn.setText("Art/Music Class");
+                    choiceBBtn.setText("Math");
+                    choiceCBtn.setText("History");
+                    choiceDBtn.setText("Science");
+                    break;
+                case 2:
+                    questionTxt.setText("What do you do like to do best in a group project?");
+                    choiceABtn.setText("Make the poster");
+                    choiceBBtn.setText("Build the model");
+                    choiceCBtn.setText("Present");
+                    choiceDBtn.setText("Science");
+                    break;
+                case 3:
+                    questionTxt.setText("You have a project due tomorrow. What do you do?");
+                    choiceABtn.setText("Make the most visually attractive project you can");
+                    choiceBBtn.setText("Quickly throw together the best project you can");
+                    choiceCBtn.setText("Email your teacher about why you can't do your project");
+                    choiceDBtn.setText("Do the research for your project and skip the visuals");
+                    break;
+                case 4:
+                    questionTxt.setText("What do you like most at a party?");
+                    choiceABtn.setText("Nice decorations and a good theme");
+                    choiceBBtn.setText("To play games");
+                    choiceCBtn.setText("Talk with friends/family");
+                    choiceDBtn.setText("Hands-on activities");
+                    nextBtn.setText("Submit");
+                    break;
+            }
+            
+        }
+        if(buttonGroup1.getSelection() == choiceABtn){
+            artCounter++;
+        }else if(buttonGroup1.getSelection() == choiceBBtn){
+            stemCounter++;
+        }else if(buttonGroup1.getSelection() == choiceCBtn){
+            lawCounter++;
+        }else{
+            medicalCounter++;
+        }
+        
         
     }//GEN-LAST:event_nextBtnActionPerformed
 
